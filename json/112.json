@@ -1,0 +1,30 @@
+{
+  "name": "LEGENDARY BUFFALO COLLECTION #112",
+  "description": "Buffalo suit up",
+  "file_url": "/112.png",
+  "image": "/112.png",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Tie",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Gray"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Base"
+    }
+  ],
+  "custom_fields": {
+    "dna": "d848852639fb847a78343b1096ba349d77a1ed73",
+    "edition": 112,
+    "date": 1656604623800,
+    "compiler": "HashLips Art Engine - codeSTACKr Modified"
+  }
+}

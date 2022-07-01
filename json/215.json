@@ -1,0 +1,30 @@
+{
+  "name": "LEGENDARY BUFFALO COLLECTION #215",
+  "description": "Buffalo suit up",
+  "file_url": "/215.png",
+  "image": "/215.png",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Orange"
+    },
+    {
+      "trait_type": "Tie",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Blue2"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Base"
+    }
+  ],
+  "custom_fields": {
+    "dna": "8eb31df4cd3718621d414e6c7c4f777097fa4944",
+    "edition": 215,
+    "date": 1656604641738,
+    "compiler": "HashLips Art Engine - codeSTACKr Modified"
+  }
+}

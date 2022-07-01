@@ -1,0 +1,5175 @@
+{
+  "version": "3.2",
+  "log": [
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "2740bf83c816fdcd429b87ca663b82b42e330823c49b3c2a1ae5cdc3b3ed9217",
+          "withoutMetadata": "4d7b8e7e7193aabed67b6aad5c2393551f4c5ccde93b71e1e5a67e0ec942ec87",
+          "linkedWithoutMetadata": "4d7b8e7e7193aabed67b6aad5c2393551f4c5ccde93b71e1e5a67e0ec942ec87"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)66_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)66_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)66_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "c53a001f2b7aa9c165f9f55fb897709ad93f58c0db058ac2c52e90898982a1f5",
+          "withoutMetadata": "736a096c9a282fc2a1ab1ec7130e06802ba827bbd462c3155978346a5e286c6b",
+          "linkedWithoutMetadata": "736a096c9a282fc2a1ab1ec7130e06802ba827bbd462c3155978346a5e286c6b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)66_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)66_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)66_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "bb7e35fc7816e9e7166a32c88df3e9629183369c8ccb15698bdc680df8d7c181",
+          "withoutMetadata": "68fbb85099afda39321e4bd86931a20b2ac0993214052ce8744e4a8672665ba3",
+          "linkedWithoutMetadata": "68fbb85099afda39321e4bd86931a20b2ac0993214052ce8744e4a8672665ba3"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)66_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)66_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)66_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "661563aa32ec3b6061bbd929c5205ed56d8b7041576f72b7f88951c107d34112",
+          "withoutMetadata": "4b79722069fe7ab8ca4c7fa00a443d2d3f5f2fc0494e547570372c9657126272",
+          "linkedWithoutMetadata": "4b79722069fe7ab8ca4c7fa00a443d2d3f5f2fc0494e547570372c9657126272"
+        },
+        "inherit": [],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)62_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)62_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)62_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "6c4b65b1f0bd82163b56036ab29f08080c6e1d2f6319aa4ec75bce41fe6832c7",
+          "withoutMetadata": "247cd918bbef383c0d34314eeef3370d255d66ed1dedd8beef40acd4cc325419",
+          "linkedWithoutMetadata": "247cd918bbef383c0d34314eeef3370d255d66ed1dedd8beef40acd4cc325419"
+        },
+        "inherit": [],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)62_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)62_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)62_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "ae406227022549ef7b0a75fa0b80f5290222ba633d88fca9c12d3c0ce3ba85d6",
+          "withoutMetadata": "55f606d2c73822d943a71feb2bbdd4489012a9d443dbfbdeee79afbebfdcfa61",
+          "linkedWithoutMetadata": "55f606d2c73822d943a71feb2bbdd4489012a9d443dbfbdeee79afbebfdcfa61"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)62_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)62_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)62_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "970d88bc10b340634d370aadd029548c6cf3f1019d5475cdc57e1fb25831dac5",
+          "withoutMetadata": "02eb34a3e77ea87f8d2f7f2b89cd4ff9b1ae38e31102c8657c7b4a6e08f3cc41",
+          "linkedWithoutMetadata": "02eb34a3e77ea87f8d2f7f2b89cd4ff9b1ae38e31102c8657c7b4a6e08f3cc41"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)62_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)62_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)62_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "b6bbc80b266b71b4bcb90d64ef4f89c805a91576bda019a2af41332eadef400a",
+          "withoutMetadata": "5f17b94c46e3248b10c82cda80d2b2eb6300baa9d78253589a1b2909a5a353ed",
+          "linkedWithoutMetadata": "5f17b94c46e3248b10c82cda80d2b2eb6300baa9d78253589a1b2909a5a353ed"
+        },
+        "inherit": [],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)62_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)62_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)62_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "ad8e9f04ed23d9d92451671c15b6a92d2322f166db6f1c068eadec3fac0f76ff",
+          "withoutMetadata": "3a800cdbeb2036a94d89f70e6524e156819c59dd31cbbe7220a1feb3d7dbf7c1",
+          "linkedWithoutMetadata": "3a800cdbeb2036a94d89f70e6524e156819c59dd31cbbe7220a1feb3d7dbf7c1"
+        },
+        "inherit": [],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)62_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)62_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)62_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:5",
+        "version": {
+          "withMetadata": "37cdfee7d2bd9e70590bec2498a8d47c7c0df2d1cc1114dd239538243eb5c172",
+          "withoutMetadata": "2979ae187819fdd2e2938e5654125ea1e18ad8fecadc5c3de17623968b6b5609",
+          "linkedWithoutMetadata": "2979ae187819fdd2e2938e5654125ea1e18ad8fecadc5c3de17623968b6b5609"
+        },
+        "inherit": [],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:26"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:14"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)62_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:16"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:18"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:20"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:22"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:24"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)62_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)62_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "18031d4101fccf9c88fb7918959c3c50cf81fbeba256f1212331986656a0e325",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1",
+          "flat": false
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "7331091bc05651d122dbb3fc7ce5fb62987738740f58a90326ebd94297564bce",
+          "withoutMetadata": "c466bd8a0ad8f7901b4d6385fe9d7050b100d767c2aa044f82ac4a87ef06329e",
+          "linkedWithoutMetadata": "c466bd8a0ad8f7901b4d6385fe9d7050b100d767c2aa044f82ac4a87ef06329e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)61_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)61_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)61_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "1e731f99dc519f63205c111d5f8814f4f3fcc9e863367ca517b2bf242c295c11",
+          "withoutMetadata": "cd322ca37cb70cfae72f4aa32683c9cabc717b1a0a2a4cda30c84f94610474a9",
+          "linkedWithoutMetadata": "cd322ca37cb70cfae72f4aa32683c9cabc717b1a0a2a4cda30c84f94610474a9"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)65_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)65_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)65_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "52a952f2a6ca5a0bc17a3167270ad2e239b64670c41ce9f3c32df28b5479516a",
+          "withoutMetadata": "a055bfeb121db478afa5c11eced65ec987e8a71b7393622ee71d4dca1b1cd6f6",
+          "linkedWithoutMetadata": "a055bfeb121db478afa5c11eced65ec987e8a71b7393622ee71d4dca1b1cd6f6"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)65_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)65_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)65_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "c4b79954f1ffcc70d0290d65cb0f0eb32a60fa0c4a8be57be253b2c69749b435",
+          "withoutMetadata": "9d4c74d801e92629930753e20876d49692b76261aa73c72ac95a96e78467b8af",
+          "linkedWithoutMetadata": "9d4c74d801e92629930753e20876d49692b76261aa73c72ac95a96e78467b8af"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)65_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)65_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)65_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "1e731f99dc519f63205c111d5f8814f4f3fcc9e863367ca517b2bf242c295c11",
+          "withoutMetadata": "cd322ca37cb70cfae72f4aa32683c9cabc717b1a0a2a4cda30c84f94610474a9",
+          "linkedWithoutMetadata": "cd322ca37cb70cfae72f4aa32683c9cabc717b1a0a2a4cda30c84f94610474a9"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)65_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)65_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)65_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "3e1c5df75a31db1a7be2bb844f57286ca57cf2a65f883e4224bc6071baf4bf91",
+          "withoutMetadata": "29d6231e46a4e7ea0bbf7159449cb04196d394a159a166994e14235bf6467a5f",
+          "linkedWithoutMetadata": "29d6231e46a4e7ea0bbf7159449cb04196d394a159a166994e14235bf6467a5f"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)65_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)65_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)65_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "f24567c86080ed25e7f6d452866448db1c5eb02b40b0bfde62a8d8266958943d",
+          "withoutMetadata": "3e1f3e03e56f7a7651f92e31c9511bb3a38e9a5378dd689c47ab773d94c4a5a5",
+          "linkedWithoutMetadata": "3e1f3e03e56f7a7651f92e31c9511bb3a38e9a5378dd689c47ab773d94c4a5a5"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)65_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)65_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)65_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "3e1c5df75a31db1a7be2bb844f57286ca57cf2a65f883e4224bc6071baf4bf91",
+          "withoutMetadata": "29d6231e46a4e7ea0bbf7159449cb04196d394a159a166994e14235bf6467a5f",
+          "linkedWithoutMetadata": "29d6231e46a4e7ea0bbf7159449cb04196d394a159a166994e14235bf6467a5f"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)65_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)65_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)65_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "64b3c5287f5a74920348ee239aa4f138809efa4da61c61c72e235b9d7aa44375",
+          "withoutMetadata": "35190238d3986238f6b6d09804e175e88ae2de55724cedc90703603581655c0a",
+          "linkedWithoutMetadata": "35190238d3986238f6b6d09804e175e88ae2de55724cedc90703603581655c0a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)61_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint16",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint16,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)61_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint16,t_address)": {
+              "label": "mapping(uint16 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)61_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint16": {
+              "label": "uint16",
+              "numberOfBytes": "2"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "02d41493b57c7a55e5d594f57a990b8720e062fe83ec680c154f16f1e9a784b3",
+          "withoutMetadata": "d0454581a7217621c2e527744f29592e723238289dcda2a54163049afa78c41f",
+          "linkedWithoutMetadata": "d0454581a7217621c2e527744f29592e723238289dcda2a54163049afa78c41f"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)61_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)61_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)61_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "e3b88482b2def9ffe13431aae7b0075f5f4a80d643f72533b5329b7f1f4fbcc3",
+          "withoutMetadata": "105c898f9c7f553eee6cb9908f6774cd30df8670ae4b370e39ab1bcf3854535b",
+          "linkedWithoutMetadata": "105c898f9c7f553eee6cb9908f6774cd30df8670ae4b370e39ab1bcf3854535b"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)61_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)61_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)61_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "2f8ddaf861db995dda3659575272bbc19ee1059ee5649cf586172ad3f979483d",
+          "withoutMetadata": "23dcdd6ab5f0a6ea25acfadcaf64c1e1e252d30df74c8c6b87d498d8522ccfaa",
+          "linkedWithoutMetadata": "23dcdd6ab5f0a6ea25acfadcaf64c1e1e252d30df74c8c6b87d498d8522ccfaa"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)61_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)61_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)61_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "8d5c22793712085c831b6e24e64dcab74c4fe406867c1ad8fd039bf31030030b",
+          "withoutMetadata": "d8e86e87bcfbcc045761bb10162cfd3f54a131c3fcd72f455b9c0b8f707f514c",
+          "linkedWithoutMetadata": "d8e86e87bcfbcc045761bb10162cfd3f54a131c3fcd72f455b9c0b8f707f514c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)61_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)61_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)61_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "2d76204ca84696e54b67ee8372898b8305f049c1db122e9ba3f830f86a0cefad",
+          "withoutMetadata": "a011532f91b135d56b469b026d4371f03de6480f18f1f388823218e3b33c1b7a",
+          "linkedWithoutMetadata": "a011532f91b135d56b469b026d4371f03de6480f18f1f388823218e3b33c1b7a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)61_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)61_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)61_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "8425f120e398ce6c8ca04005e4a66d327c1d045bd29ed45fe152f4907816088d",
+          "withoutMetadata": "c9061e2b6286ea7618e778e74ee5917f053e13ef3a843a4e5272b3317ad02e70",
+          "linkedWithoutMetadata": "c9061e2b6286ea7618e778e74ee5917f053e13ef3a843a4e5272b3317ad02e70"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)61_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)61_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)61_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "Nft": {
+        "src": "contracts/Nft.sol:4",
+        "version": {
+          "withMetadata": "8d5c22793712085c831b6e24e64dcab74c4fe406867c1ad8fd039bf31030030b",
+          "withoutMetadata": "d8e86e87bcfbcc045761bb10162cfd3f54a131c3fcd72f455b9c0b8f707f514c",
+          "linkedWithoutMetadata": "d8e86e87bcfbcc045761bb10162cfd3f54a131c3fcd72f455b9c0b8f707f514c"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "()",
+          "mint(string,string,string,string,string,string)",
+          "claimNft()",
+          "transfer(uint8,address)",
+          "burn(uint8)",
+          "withdraw()",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Nft",
+            "src": "contracts/Nft.sol:25"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_owner",
+            "src": "contracts/Nft.sol:11"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "users",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:13"
+            },
+            {
+              "label": "nft",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_array(t_struct(nftInfo)61_storage)dyn_storage",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:15"
+            },
+            {
+              "label": "claimCounter",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint8",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:17"
+            },
+            {
+              "label": "hasAccount",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:19"
+            },
+            {
+              "label": "NftToAddress",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint8,t_address)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:21"
+            },
+            {
+              "label": "NumberOfNfts",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_address,t_uint8)",
+              "contract": "Nft",
+              "src": "contracts/Nft.sol:23"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(nftInfo)61_storage)dyn_storage": {
+              "label": "struct Nft.nftInfo[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_uint8)": {
+              "label": "mapping(address => uint8)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint8,t_address)": {
+              "label": "mapping(uint8 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(nftInfo)61_storage": {
+              "label": "struct Nft.nftInfo",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "background",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "tie",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "suit",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "base",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "dna",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "cid",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "uri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "owner",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "8"
+                }
+              ],
+              "numberOfBytes": "288"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint8": {
+              "label": "uint8",
+              "numberOfBytes": "1"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    }
+  ]
+}

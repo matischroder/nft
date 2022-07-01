@@ -1,0 +1,30 @@
+{
+  "name": "LEGENDARY BUFFALO COLLECTION #3",
+  "description": "Buffalo suit up",
+  "file_url": "/3.png",
+  "image": "/3.png",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Orange"
+    },
+    {
+      "trait_type": "Tie",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Suit",
+      "value": "Blue1"
+    },
+    {
+      "trait_type": "Base",
+      "value": "Base"
+    }
+  ],
+  "custom_fields": {
+    "dna": "2e8a35e08788694234ceec69b8ed1969d101d40a",
+    "edition": 3,
+    "date": 1656604610283,
+    "compiler": "HashLips Art Engine - codeSTACKr Modified"
+  }
+}
