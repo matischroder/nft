@@ -7,8 +7,6 @@ contract Nft {
 
     uint256 public constant PRICE = 50000000000000000; //0.05 eth
 
-    string private constant BASE_URI = "ipfs://";
-
     address public immutable i_owner;
 
     address[] public users;
@@ -36,7 +34,6 @@ contract Nft {
         string base;
         string dna;
         string cid;
-        string uri;
         address owner;
     }
 
@@ -57,7 +54,6 @@ contract Nft {
                 _base,
                 _dna,
                 _cid,
-                string.concat(BASE_URI, _cid),
                 address(0)
             )
         );
@@ -85,7 +81,7 @@ contract Nft {
         }
         nft[_id].owner = _to;
         NftToAddress[_id] = _to;
-        NumberOfNfts[msg.sender]--;
+        NumberOfNfts[msg.sender] = NumberOfNfts[msg.sender] - 1;
         NumberOfNfts[_to]++;
         emit Transfer(msg.sender, _to, _id);
     }
@@ -93,7 +89,7 @@ contract Nft {
     function burn(uint8 _id) public nftOwner(_id) {
         nft[_id].owner = address(0);
         NftToAddress[_id] = address(0);
-        NumberOfNfts[msg.sender]--;
+        NumberOfNfts[msg.sender] = NumberOfNfts[msg.sender] - 1;
         emit Burn(msg.sender, _id);
     }
 
@@ -123,8 +119,11 @@ contract Nft {
     }
 
     modifier nftOwner(uint8 _id) {
-        require(msg.sender == NftToAddress[_id]);
-        _;
+        if (msg.sender == NftToAddress[_id]) {
+            _;
+        } else {
+            revert("To transfer the NFT you must be the owner");
+        }
     }
 
     receive() external payable {

@@ -28,7 +28,6 @@ describe("Nft contract", function () {
             "Base",
             "18142782d84ac3a45ec34bf729cd920676ddc1c8",
             "bafkreigewh3khhu7ihpvl55hul2ovnfqhmjt35tf3tzlbjftcjtwtsfiqe",
-            "ipfs://bafkreigewh3khhu7ihpvl55hul2ovnfqhmjt35tf3tzlbjftcjtwtsfiqe",
             "0x0000000000000000000000000000000000000000",
         ]
 
@@ -48,8 +47,7 @@ describe("Nft contract", function () {
         expect(nft.base).to.equal(firstNft[4])
         expect(nft.dna).to.equal(firstNft[5])
         expect(nft.cid).to.equal(firstNft[6])
-        expect(nft.uri).to.equal(firstNft[7])
-        expect(nft.owner).to.equal(firstNft[8])
+        expect(nft.owner).to.equal(firstNft[7])
     })
 
     it("Buy Nft", async function () {
@@ -89,6 +87,7 @@ describe("Nft contract", function () {
 
         var options = { value: ethers.utils.parseEther("0.05") }
         await hardhatNft.connect(addr1).claimNft(options)
+        expect(await hardhatNft.NumberOfNfts(addr1.getAddress())).to.equal(1)
         await hardhatNft.connect(addr1).transfer(0, addr2.getAddress())
 
         expect(await hardhatNft.hasAccount(addr2.getAddress())).to.equal(true)

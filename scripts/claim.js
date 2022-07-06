@@ -12,11 +12,14 @@ async function mint() {
     console.log("Account balance:", (await user.getBalance()).toString())
 
     Nft = await ethers.getContractFactory("Nft")
+    console.log(Nft.interface)
+
     nft = new Contract(
         "0x782501b7e37822bb0b527575b8ebb93a15925948",
         Nft.interface,
         user
     )
+
     const options = { value: ethers.utils.parseEther("0.05") }
     await nft.claimNft(options)
 
