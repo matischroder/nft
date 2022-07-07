@@ -15,7 +15,7 @@ async function mint() {
     console.log(Nft.interface)
 
     nft = new Contract(
-        "0x782501b7e37822bb0b527575b8ebb93a15925948",
+        "0x8736b26702CF73b6e496F9ca5D7F5B88D6Cb4321",
         Nft.interface,
         user
     )
